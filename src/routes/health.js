@@ -1,9 +1,9 @@
 // src/routes/health.js
 
-const express = require('express');
-const pool = require('../db');
+import { Router } from 'express';
+import pool from '../db.js';
 
-const router = express.Router();
+const router = Router();
 
 router.get('/', (req, res) => {
   res.status(200).send('Node OK - ' + process.version);
@@ -34,4 +34,4 @@ router.get('/whoami', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

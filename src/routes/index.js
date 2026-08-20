@@ -1,12 +1,12 @@
 // src/routes/index.js
 
-const express = require('express');
-const healthRouter = require('./health');
-const itemsRouter = require('./items');
+import { Router } from 'express';
+import healthRouter from './health.js';
+import itemsRouter from './items.js';
 
-const router = express.Router();
+const router = Router();
 
 router.use(healthRouter);
 router.use('/items', itemsRouter);
 
-module.exports = router;
+export default router;

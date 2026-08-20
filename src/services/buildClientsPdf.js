@@ -1,6 +1,6 @@
 // src/services/buildClientsPdf.js
 
-const { PDFDocument, StandardFonts, rgb } = require('pdf-lib');
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 
 /**
  * @param {Array<{ id: number, nom: string, age: number }>} rows
@@ -73,4 +73,4 @@ async function buildClientsPdf(rows) {
   return pdfDoc.save();
 }
 
-module.exports = { buildClientsPdf };
+export default { buildClientsPdf };

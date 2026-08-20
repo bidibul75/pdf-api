@@ -1,12 +1,13 @@
 // server.js
 
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
-const express = require('express');
-const routes = require('./src/routes');
+import express, { json } from 'express';
+import routes from './src/routes/index.js';
 
 const app = express();
-app.use(express.json());
+app.use(json());
 
 app.use(routes);
 
